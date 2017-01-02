@@ -2,7 +2,6 @@ package performance
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"strings"
 
@@ -27,8 +26,6 @@ func HandlePerfor(w http.ResponseWriter, r *http.Request) {
 	)
 
 	params := mux.Vars(r)
-
-	fmt.Println(r.Body)
 
 	var data PerforData
 	err := json.NewDecoder(r.Body).Decode(&data)
