@@ -19,7 +19,8 @@ type PerforData struct {
 var perforDatas []PerforData
 
 // HandlePerfor handle CPU info from bee
-//curl -H "Content-Type:application/json" -X POST --data '{"id": 946,"name":"cpu max","value":56}' http://localhost:61616/performance/cpu/946
+// you could test it by
+// 		curl -H "Content-Type:application/json" -X POST -d '{"id":"946","name":"cpu max","value":56}' http://localhost:61616/performance/946
 func HandlePerfor(w http.ResponseWriter, r *http.Request) {
 	logger := zap.New(
 		zap.NewJSONEncoder(zap.NoTime()), // drop timestamps in tests
